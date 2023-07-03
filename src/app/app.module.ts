@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderModule } from 'src/components/header/header.module';
 import { RecipeModule } from 'src/components/recipes/recipies.module';
 import { ShoppingListModule } from 'src/components/shopping-list/shopping-list.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,6 +16,7 @@ import { ShoppingListModule } from 'src/components/shopping-list/shopping-list.m
     HeaderModule,
     RecipeModule,
     ShoppingListModule,
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

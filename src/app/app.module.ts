@@ -7,6 +7,7 @@ import { HeaderModule } from 'src/components/header/header.module';
 import { RecipeModule } from 'src/components/recipes/recipies.module';
 import { ShoppingListModule } from 'src/components/shopping-list/shopping-list.module';
 import { CommonModule } from '@angular/common';
+import { ShoppingListService } from 'src/components/shopping-list/shopping-list.service';
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { CommonModule } from '@angular/common';
     ShoppingListModule,
     CommonModule,
   ],
-  providers: [],
+  providers: [ShoppingListService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

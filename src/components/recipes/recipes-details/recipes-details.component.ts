@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Recipe } from '../recipe.model';
+import { RecipesService } from '../recipes.service';
 
 @Component({
   selector: 'app-recipes-details',
@@ -8,5 +9,8 @@ import { Recipe } from '../recipe.model';
 })
 export class RecipesDetailsComponent {
   @Input() recipe: Recipe | undefined;
-  constructor() {}
+  constructor(private recipeService: RecipesService) {}
+  onAddToShoppingList() {
+    this.recipeService.addIngrsToShopList(this.recipe?.ingredients)
+  }
 }

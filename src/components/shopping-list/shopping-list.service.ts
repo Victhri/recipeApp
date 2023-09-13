@@ -16,5 +16,15 @@ export class ShoppingListService {
         this.ingredients.push(ingredient);
         this.ingredientChanged.emit(this.ingredients.slice())
     }
+    onIngridientDeleted(ingredient: Ingredient) {
+       
+    }
+    addIngredients(ingredients: Ingredient[] | undefined) {
+        if(ingredients) {
+            this.ingredients.push(...ingredients);
+            this.ingredientChanged.emit(this.ingredients.slice())
+        }
+        return 
+    }
 
 }

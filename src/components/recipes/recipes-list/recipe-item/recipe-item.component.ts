@@ -13,6 +13,7 @@ export class RecipeItemComponent {
     name: 'No title',
     description: 'No descroprion',
     imagePath: 'No img',
+    ingredients: [],
   };
   onSelected() {
     this.RecipesService.recipeSelected.emit(this.recipe);

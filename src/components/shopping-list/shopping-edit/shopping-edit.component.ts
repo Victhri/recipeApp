@@ -20,5 +20,8 @@ export class ShoppingEditComponent {
     const newIngridient = new Ingredient(ingName, ingAmount);
     this.ShoppingListService.onIngridientAdded(newIngridient);
   }
+  onDeleteItem() {
+    
+  }
   constructor(private ShoppingListService: ShoppingListService) {}
 }

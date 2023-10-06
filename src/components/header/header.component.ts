@@ -7,8 +7,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class HeaderComponent {
   constructor() {}
   collapsed = true;
-  @Output() valueSelected = new EventEmitter<string>();
-  onSelect(value: string) {
-    this.valueSelected.emit(value);
-  }
+  // @Output() valueSelected = new EventEmitter<string>();
+  // onSelect(value: string) {
+  //   this.valueSelected.emit(value);
+  // }
 }

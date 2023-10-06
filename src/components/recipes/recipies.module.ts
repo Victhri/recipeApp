@@ -6,9 +6,10 @@ import { RecipesDetailsComponent } from './recipes-details/recipes-details.compo
 import { RecipesListComponent } from './recipes-list/recipes-list.component';
 import { CommonModule } from '@angular/common';
 import { DirectivesModule } from 'src/app/shared/directives.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  imports: [CommonModule, DirectivesModule],
+  imports: [CommonModule, DirectivesModule, RouterModule],
   exports: [
     RecipesComponent,
     RecipeItemComponent,

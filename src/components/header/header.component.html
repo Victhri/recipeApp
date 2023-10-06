@@ -16,9 +16,9 @@
       (window:resize)="collapsed = true"
     >
       <ul class="nav navbar-nav">
-        <li><a href="#" (click)="onSelect('reciepe')">Reciepe Section</a></li>
+        <li><a [routerLink]="['/recipes']" routerLinkActive="router-link-active"  >Reciepe Section</a></li>
         <li>
-          <a href="#" (click)="onSelect('shopping-list')">Shopping Section</a>
+          <a [routerLink]="['/shopping-list']" routerLinkActive="router-link-active" >Shopping Section</a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

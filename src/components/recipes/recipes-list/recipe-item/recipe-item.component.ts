@@ -15,7 +15,4 @@ export class RecipeItemComponent {
     imagePath: 'No img',
     ingredients: [],
   };
-  onSelected() {
-    this.RecipesService.recipeSelected.emit(this.recipe);
-  }
 }

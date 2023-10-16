@@ -7,20 +7,27 @@ import { RecipesListComponent } from './recipes-list/recipes-list.component';
 import { CommonModule } from '@angular/common';
 import { DirectivesModule } from 'src/app/shared/directives.module';
 import { RouterModule } from '@angular/router';
+import { RecipesStartComponent } from './recipes-start/recipes-start.component';
+import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
 
 @NgModule({
   imports: [CommonModule, DirectivesModule, RouterModule],
   exports: [
+    RecipesStartComponent,
     RecipesComponent,
     RecipeItemComponent,
     RecipesDetailsComponent,
     RecipesListComponent,
+    RecipeEditComponent
   ],
   declarations: [
+    RecipesStartComponent,
     RecipesComponent,
     RecipeItemComponent,
     RecipesDetailsComponent,
     RecipesListComponent,
+    RecipeEditComponent,
+    RecipeEditComponent
   ],
   providers: [],
 })

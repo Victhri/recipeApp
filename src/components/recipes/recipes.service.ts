@@ -29,7 +29,7 @@ export class RecipesService {
   getRecipes() {
     return this.recipes.slice();
   }
-  getRecipe(alias: any) {
+  getRecipe(alias: string) {
     return this.recipes.find((recipe) => {return recipe.alias === alias});
   }
   addIngrsToShopList(ingredients: Ingredient[] | undefined) {

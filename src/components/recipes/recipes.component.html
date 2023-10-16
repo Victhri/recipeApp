@@ -5,10 +5,6 @@
     ></app-recipes-list>
   </div>
   <div class="col-md-7">
-    <app-recipes-details *ngIf="selectedRecipe" [recipe]="selectedRecipe">
-    </app-recipes-details>
-    <ng-container *ngIf="!selectedRecipe">
-      <p>Select a Recipe!</p>
-    </ng-container>
+    <router-outlet></router-outlet>
   </div>
 </div>

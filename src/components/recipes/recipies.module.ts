@@ -9,9 +9,10 @@ import { DirectivesModule } from 'src/app/shared/directives.module';
 import { RouterModule } from '@angular/router';
 import { RecipesStartComponent } from './recipes-start/recipes-start.component';
 import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  imports: [CommonModule, DirectivesModule, RouterModule],
+  imports: [CommonModule, DirectivesModule, RouterModule, ReactiveFormsModule],
   exports: [
     RecipesStartComponent,
     RecipesComponent,

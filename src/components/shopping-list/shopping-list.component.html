@@ -7,10 +7,12 @@
       <a
         class="list-group-item"
         style="cursor: pointer"
-        *ngFor="let ingredient of ingredients"
+        *ngFor="let ingredient of ingredients; let id = index"
+        (click)="onEditItem(id)"
       >
         {{ ingredient.name }} ({{ ingredient.amount }})
       </a>
+      <p class="test" *ngIf="!ingredients.length">Add your items 🥗</p>
     </ul>
   </div>
 </div>

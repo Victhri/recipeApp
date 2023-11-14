@@ -2,9 +2,11 @@ import { Injectable } from "@angular/core";
 import { Recipe } from "./recipe.model";
 import { Ingredient } from "src/app/shared/ingredient.model";
 import { ShoppingListService } from "../shopping-list/shopping-list.service";
+import { Subject } from "rxjs";
 
 @Injectable()
 export class RecipesService {
+  recipeChanged= new Subject<Recipe[]>();
   private recipes: Recipe[] = [
       new Recipe(
         'chorizo-and-mozarella',
@@ -33,6 +35,19 @@ export class RecipesService {
   }
   addIngrsToShopList(ingredients: Ingredient[] | undefined) {
     this.slService.addIngredients(ingredients)
+  }
+  addRecipe(recipe: Recipe) {
+    this.recipes.push(recipe);
+    this.recipeChanged.next(this.recipes.slice())
+  }
+  updateRecipe(alias: string, newRecipe: Recipe) {
+    const index = this.recipes.findIndex(recipe => recipe.alias === alias);
+    if (index !== -1) {
+      this.recipes[index] = newRecipe;
+      this.recipeChanged.next(this.recipes.slice());
+    } else {
+      console.log(`Recipe with alias '${alias}' not found.`);
+    }
   }
 
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { RecipesService } from '../recipes.service';
 import { Recipe } from '../recipe.model';
@@ -15,7 +15,7 @@ export class RecipeEditComponent  implements OnInit{
   editMode= false;
   recipeForm!: FormGroup | any;
 
-  constructor(private route: ActivatedRoute, private RecipetServise: RecipesService) { }
+  constructor(private route: ActivatedRoute, private RecipetServise: RecipesService, private router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) =>  {
@@ -31,7 +31,7 @@ export class RecipeEditComponent  implements OnInit{
   private initForm() {
     let alias: string| undefined = ''
     let name: string| undefined = '';
-    let path: string| undefined = '';
+    let imagePath: string| undefined = '';
     let description:  string| undefined = '';
     let recipeIngredients:any = new FormArray([]);
     
@@ -39,7 +39,7 @@ export class RecipeEditComponent  implements OnInit{
       const recipe = this.RecipetServise.getRecipe(this.title);
       alias = recipe?.alias
       name = recipe?.name;
-      path = recipe?.imagePath;
+      imagePath = recipe?.imagePath;
       description = recipe?.description;
       if(recipe?.ingredients?.length) {
         for(let ingredient of recipe.ingredients) {
@@ -54,7 +54,7 @@ export class RecipeEditComponent  implements OnInit{
     this.recipeForm= new FormGroup({
       'alias': new FormControl(alias, Validators.required),
       'name' : new FormControl(name, Validators.required),
-      'path': new FormControl(path, Validators.required),
+      'imagePath': new FormControl(imagePath, Validators.required),
       'description': new FormControl(description, Validators.required),
       'ingredients': recipeIngredients
     })
@@ -69,11 +69,19 @@ export class RecipeEditComponent  implements OnInit{
     )
   }
 
+  onDeleteIngredient(index: number) {
+    (<FormArray>this.recipeForm.get('ingredients')).removeAt(index)
+  }
+
   onSubmit() {
     if(this.editMode){
       this.RecipetServise.updateRecipe(this.title, this.recipeForm.value)
     } else {
       this.RecipetServise.addRecipe(this.recipeForm.value);
     }
+    this.onCancel()
+  }
+  onCancel() {
+    this.router.navigate(['../'], {relativeTo: this.route})
   }
 }

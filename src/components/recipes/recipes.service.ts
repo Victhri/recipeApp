@@ -50,4 +50,14 @@ export class RecipesService {
     }
   }
 
+  deleteRecipe(alias: string) {
+    const index = this.recipes.findIndex(recipe => recipe.alias === alias);
+    if (index !== -1) {
+      this.recipes.splice(index, 1);
+      this.recipeChanged.next(this.recipes.slice());
+    } else {
+      console.log(`Recipe with alias '${alias}' not found.`);
+    }   
+  }
+
 }

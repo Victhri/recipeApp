@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from 'src/components/home-page/home-page.component';
 import { RecipeEditComponent } from 'src/components/recipes/recipe-edit/recipe-edit.component';
+import { RecipeResolverService } from 'src/components/recipes/recipe-resolver.service';
 import { RecipesDetailsComponent } from 'src/components/recipes/recipes-details/recipes-details.component';
 import { RecipesStartComponent } from 'src/components/recipes/recipes-start/recipes-start.component';
 import { RecipesComponent } from 'src/components/recipes/recipes.component';
@@ -26,11 +27,13 @@ const appRoutes: Routes = [
       },
       {
         path: ':title',
-        component: RecipesDetailsComponent
+        component: RecipesDetailsComponent,
+        resolve: [RecipeResolverService]
       },
       {
         path: ':title/edit',
-        component: RecipeEditComponent
+        component: RecipeEditComponent,
+        resolve: [RecipeResolverService]
       },
     ]
   },

@@ -5,14 +5,14 @@ import { RecipeItemComponent } from './recipes-list/recipe-item/recipe-item.comp
 import { RecipesDetailsComponent } from './recipes-details/recipes-details.component';
 import { RecipesListComponent } from './recipes-list/recipes-list.component';
 import { CommonModule } from '@angular/common';
-import { DirectivesModule } from 'src/app/shared/directives.module';
 import { RouterModule } from '@angular/router';
 import { RecipesStartComponent } from './recipes-start/recipes-start.component';
 import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DropdownDirective } from 'src/app/shared/dropdown.directive';
 
 @NgModule({
-  imports: [CommonModule, DirectivesModule, RouterModule, ReactiveFormsModule],
+  imports: [CommonModule, DropdownDirective, RouterModule, ReactiveFormsModule],
   exports: [
     RecipesStartComponent,
     RecipesComponent,

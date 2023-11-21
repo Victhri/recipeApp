@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
-
 import { HeaderComponent } from './header.component';
 import { CommonModule } from '@angular/common';
-import { DirectivesModule } from 'src/app/shared/directives.module';
 import { RouterModule } from '@angular/router';
+import { DropdownDirective } from 'src/app/shared/dropdown.directive';
 
 @NgModule({
-  imports: [CommonModule, DirectivesModule, RouterModule],
+  imports: [CommonModule, DropdownDirective, RouterModule],
   exports: [HeaderComponent],
   declarations: [HeaderComponent],
   providers: [],

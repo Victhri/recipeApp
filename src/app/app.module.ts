@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 import { ShoppingListService } from 'src/components/shopping-list/shopping-list.service';
 import { RecipesService } from 'src/components/recipes/recipes.service';
 import { HomePageModule } from 'src/components/home-page/home-page.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,7 +22,8 @@ import { HomePageModule } from 'src/components/home-page/home-page.module';
     ShoppingListModule,
     CommonModule,
     AppRoutingModule,
-    HomePageModule
+    HomePageModule,
+    HttpClientModule,
   ],
   providers: [ShoppingListService, RecipesService],
   bootstrap: [AppComponent],

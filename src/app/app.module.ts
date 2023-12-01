@@ -25,7 +25,7 @@ import { AuthModule } from 'src/components/auth/auth.module';
     AppRoutingModule,
     HomePageModule,
     HttpClientModule,
-    AuthModule
+    AuthModule,
   ],
   providers: [ShoppingListService, RecipesService],
   bootstrap: [AppComponent],

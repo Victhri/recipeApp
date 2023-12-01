@@ -11,6 +11,7 @@ import { ShoppingListService } from 'src/components/shopping-list/shopping-list.
 import { RecipesService } from 'src/components/recipes/recipes.service';
 import { HomePageModule } from 'src/components/home-page/home-page.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthModule } from 'src/components/auth/auth.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HomePageModule,
     HttpClientModule,
+    AuthModule
   ],
   providers: [ShoppingListService, RecipesService],
   bootstrap: [AppComponent],

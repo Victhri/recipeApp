@@ -8,6 +8,8 @@ export class ShoppingListService {
   
 
     getIngredients() {
+        console.log(this.ingredients);
+        
         return this.ingredients.slice();
     }
     getIngredient(index: number) {

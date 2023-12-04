@@ -26,7 +26,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li routerLinkActive="active" *ngIf="isAuthenticated">
-          <a style="cursor: pointer;">Logout</a>
+          <a style="cursor: pointer;" (click)="onLogout()">Logout</a>
         </li>
         <li class="dropdown" appDropdown *ngIf="isAuthenticated">
           <a class="dropdown-toggle">Manage <span class="caret"></span></a>

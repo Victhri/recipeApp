@@ -22,6 +22,9 @@ export class HeaderComponent implements OnInit, OnDestroy{
   onFetchData() {
     this.storeDataService.fetchRecipes().subscribe();
   }
+  onLogout() {
+    this.authService.logout();
+  }
   ngOnInit() {
     this.userSubscription = this.authService.userSubject.subscribe(user => {
       this.isAuthenticated = !!user;

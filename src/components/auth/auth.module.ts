@@ -6,10 +6,11 @@ import { LoadingSpinnerComponent } from "src/app/shared/loading-spinner/loading-
 import { RouterModule } from "@angular/router";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AuthInterceptorService } from "./auth-interceptor.service";
+import { AlertModule } from "src/app/shared/alert/alert.module";
 
 
 @NgModule({
-    imports: [CommonModule, FormsModule, RouterModule],
+    imports: [CommonModule, FormsModule, RouterModule, AlertModule],
     exports: [AuthComponent],
     declarations: [AuthComponent, LoadingSpinnerComponent],
     providers: [

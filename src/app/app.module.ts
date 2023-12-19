@@ -13,6 +13,7 @@ import { HomePageModule } from 'src/components/home-page/home-page.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthModule } from 'src/components/auth/auth.module';
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
